@@ -6,10 +6,9 @@ db = SQLAlchemy()
 
 
 def create_app(config_name):
-
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
-
+    app.config.from_object(config[config_name])  # 取得組態物件
+    app.debug = config[config_name].DEBUG  # debug mode
     db.init_app(app)
 
     # view
