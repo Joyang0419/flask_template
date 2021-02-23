@@ -2,7 +2,7 @@ import os
 import datetime
 
 #  取得目前文件資料夾路徑
-basedir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../')  # app資料夾
+basedir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../app/')  # app資料夾
 
 
 def create_sqlite_uri(db_name):
@@ -15,7 +15,7 @@ class BaseConfig:  # 基本配置
 
 
 class DevelopmentConfig(BaseConfig):
-    DEBUG = True
+    DEBUG = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.db')
 
